@@ -4,36 +4,42 @@ export default {
   theme: {
     extend: {
       colors: {
-        base: "#0B1120",
-        surface: "#121A2B",
-        "surface-light": "#1B2537",
-        "surface-hover": "#212C42",
-        border: "#223049",
+        base: "#F7F6F2",
+        surface: "#FFFFFF",
+        "surface-light": "#EEF3EC",
+        "surface-hover": "#E3EADF",
+        border: "#D8E0D5",
+
         accent: {
-          DEFAULT: "#38BDF8",
-          cyan: "#22D3EE",
-          dim: "#0EA5C9",
+          DEFAULT: "#5E7D5A",
+          cyan: "#7A9A74",
+          dim: "#4F6B4C",
         },
+
         ink: {
-          DEFAULT: "#F8FAFC",
-          muted: "#94A3B8",
-          faint: "#5B6B85",
+          DEFAULT: "#2F3B2F",
+          muted: "#6E776B",
+          faint: "#8E978B",
         },
-        sale: "#FB923C",
-        success: "#34D399",
+
+        sale: "#B08968",
+        success: "#6A8F65",
       },
+
       fontFamily: {
-        display: ["'Space Grotesk'", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
-        mono: ["'JetBrains Mono'", "monospace"],
+        display: ["Space Grotesk", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
       },
+
       boxShadow: {
-        glow: "0 0 40px -8px rgba(56, 189, 248, 0.35)",
-        card: "0 1px 0 rgba(255,255,255,0.03), 0 8px 24px -8px rgba(0,0,0,0.5)",
+        glow: "0 0 30px rgba(94,125,90,0.25)",
+        card: "0 8px 25px rgba(0,0,0,0.08)",
       },
+
       backgroundImage: {
         "grid-fade":
-          "linear-gradient(to bottom, rgba(11,17,32,0) 0%, #0B1120 90%)",
+          "linear-gradient(to bottom, rgba(247,246,242,0) 0%, #F7F6F2 100%)",
       },
     },
   },

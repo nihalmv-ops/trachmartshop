@@ -1,55 +1,81 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Laptop, Smartphone } from "lucide-react";
+import { Laptop, Smartphone } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div
-        className="absolute inset-0 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#38BDF8 1px, transparent 1px), linear-gradient(90deg, #38BDF8 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-        aria-hidden="true"
-      />
-      <div className="absolute -top-40 -right-40 w-[420px] h-[420px] bg-accent/20 rounded-full blur-[120px]" aria-hidden="true" />
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#F8F7F3] via-[#FFFFFF] to-[#EEF4EE] border-b border-[#E4E8E2]">
 
-      <div className="container-shell relative py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      {/* Soft Green Glow */}
+      <div className="absolute -top-32 -left-24 w-80 h-80 rounded-full bg-[#C9D9C4] blur-[120px] opacity-40" />
+
+      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#E5EFE3] blur-[150px] opacity-70" />
+
+      <div className="container-shell relative py-20 md:py-28 grid md:grid-cols-2 gap-16 items-center">
+
+        {/* Left */}
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-accent bg-accent/10 border border-accent/30 rounded-full px-3 py-1 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+
+          <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider text-[#5E7D5A] bg-[#EDF5EC] border border-[#C7D7C4] rounded-full px-4 py-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#5E7D5A] animate-pulse"></span>
             NEW ARRIVALS EVERY WEEK
           </div>
-          <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight text-ink">
-            Specs first.
+
+          <h1 className="font-display font-bold text-5xl lg:text-6xl leading-tight text-[#243224]">
+            Find Your
             <br />
-            <span className="text-accent">Marketing, second.</span>
+            <span className="text-[#5E7D5A]">
+              Perfect Device.
+            </span>
           </h1>
-          <p className="mt-6 text-ink-muted text-base sm:text-lg max-w-md">
-            Every laptop and phone on TechNest ships with its full datasheet
-            up front — processor, RAM, storage, battery — so you compare
-            hardware, not adjectives.
+
+          <p className="mt-6 text-lg leading-8 text-[#687468] max-w-lg">
+            Explore premium laptops and smartphones with detailed
+            specifications, trusted brands, competitive pricing,
+            and fast delivery.
           </p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link to="/shop/laptop" className="btn-primary">
-              <Laptop size={18} /> Shop Laptops
+
+          <div className="mt-10 flex flex-wrap gap-4">
+
+            <Link
+              to="/shop/laptop"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#5E7D5A] px-7 py-3 text-white font-semibold shadow-lg hover:bg-[#4F6B4C] transition"
+            >
+              <Laptop size={20} />
+              Shop Laptops
             </Link>
-            <Link to="/shop/mobile" className="btn-outline">
-              <Smartphone size={18} /> Shop Mobiles
+
+            <Link
+              to="/shop/mobile"
+              className="inline-flex items-center gap-2 rounded-xl border border-[#CAD8C7] bg-white px-7 py-3 font-semibold text-[#2F3B2F] hover:bg-[#F5F8F3] transition"
+            >
+              <Smartphone size={20} />
+              Shop Mobiles
             </Link>
+
           </div>
-          <div className="mt-10 flex items-center gap-6 text-sm">
-            <Stat value="120+" label="Devices listed" />
-            <Stat value="4.6/5" label="Avg. rating" />
-            <Stat value="7-day" label="Easy returns" />
+
+          <div className="mt-12 flex gap-8">
+
+            <Stat value="120+" label="Products" />
+
+            <Stat value="4.9★" label="Customer Rating" />
+
+            <Stat value="Free" label="Shipping" />
+
           </div>
+
         </div>
 
-        <div className="relative hidden md:flex items-center justify-center h-[420px]">
+        {/* Right */}
+
+        <div className="relative hidden md:flex justify-center items-center h-[450px]">
+
           <DeviceMockups />
+
         </div>
+
       </div>
+
     </section>
   );
 }
@@ -57,8 +83,8 @@ export default function Hero() {
 function Stat({ value, label }) {
   return (
     <div>
-      <p className="font-display font-bold text-xl text-ink">{value}</p>
-      <p className="text-xs text-ink-faint">{label}</p>
+      <h3 className="text-3xl font-bold text-[#2F3B2F]">{value}</h3>
+      <p className="text-[#7A847A]">{label}</p>
     </div>
   );
 }
@@ -66,31 +92,47 @@ function Stat({ value, label }) {
 function DeviceMockups() {
   return (
     <div className="relative w-full max-w-md">
-      {/* Laptop frame */}
-      <div className="relative mx-auto w-[340px]">
-        <div className="rounded-t-xl border border-border bg-surface p-2 shadow-card">
-          <div className="rounded-lg overflow-hidden aspect-[16/10] bg-surface-light">
+
+      {/* Laptop */}
+
+      <div className="relative mx-auto w-[360px]">
+
+        <div className="rounded-2xl border border-[#D9E3D6] bg-white p-3 shadow-2xl">
+
+          <div className="overflow-hidden rounded-xl aspect-[16/10]">
+
             <img
-              src="https://picsum.photos/seed/hero-laptop-screen/640/400"
+              src="https://i.pinimg.com/736x/2c/bb/27/2cbb279db19688c5d0146ae3143c7d78.jpg"
               alt=""
               className="w-full h-full object-cover"
             />
+
           </div>
+
         </div>
-        <div className="h-3 bg-surface-light border-x border-b border-border rounded-b-md" />
-        <div className="h-1.5 w-24 mx-auto bg-border rounded-b-lg" />
+
+        <div className="h-4 rounded-b-xl bg-[#E8EEE7] border-x border-b border-[#D9E3D6]" />
+
+        <div className="mx-auto h-2 w-28 rounded-b-full bg-[#CDD9CB]" />
+
       </div>
 
-      {/* Phone frame, overlapping bottom-right */}
-      <div className="absolute -bottom-6 -right-6 w-32 rounded-[1.4rem] border-4 border-surface-light bg-surface shadow-glow overflow-hidden">
+      {/* Phone */}
+
+      <div className="absolute -bottom-8 -right-8 w-36 rounded-[32px] border-[6px] border-white bg-white shadow-2xl overflow-hidden">
+
         <div className="aspect-[9/19]">
+
           <img
-            src="https://picsum.photos/seed/hero-phone-screen/300/640"
+            src="https://i.pinimg.com/736x/bf/17/f5/bf17f52c5552de9b5703c5eb69d88f7e.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
+
         </div>
+
       </div>
+
     </div>
   );
 }

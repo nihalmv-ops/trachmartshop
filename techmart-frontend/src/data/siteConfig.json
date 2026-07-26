@@ -1,0 +1,45 @@
+{
+  "siteName": "TechNest",
+  "tagline": "Laptops & mobiles, matched to how you actually use them",
+  "contact": {
+    "phone": "+91 98765 43210",
+    "email": "hello@technest.example",
+    "address": "3rd Floor, Cyber Towers, Hi-Tech City, Hyderabad, 500081"
+  },
+  "social": {
+    "instagram": "https://instagram.com",
+    "twitter": "https://twitter.com",
+    "facebook": "https://facebook.com",
+    "youtube": "https://youtube.com"
+  },
+  "nav": [
+    { "label": "Home", "path": "/" },
+    { "label": "Laptops", "path": "/shop/laptop" },
+    { "label": "Mobiles", "path": "/shop/mobile" },
+    { "label": "About", "path": "/about" },
+    { "label": "Contact", "path": "/contact" }
+  ],
+  "footerLinks": {
+    "shop": [
+      { "label": "All Laptops", "path": "/shop/laptop" },
+      { "label": "All Mobiles", "path": "/shop/mobile" },
+      { "label": "Deals & Offers", "path": "/shop/laptop?tag=sale" }
+    ],
+    "company": [
+      { "label": "About Us", "path": "/about" },
+      { "label": "Contact", "path": "/contact" },
+      { "label": "Careers", "path": "/about" }
+    ],
+    "support": [
+      { "label": "Track Order", "path": "/contact" },
+      { "label": "Warranty", "path": "/about" },
+      { "label": "Returns", "path": "/about" }
+    ]
+  },
+  "trustBadges": [
+    { "label": "Free Delivery", "detail": "On orders above ₹999" },
+    { "label": "Secure Payments", "detail": "256-bit encrypted checkout" },
+    { "label": "Easy Returns", "detail": "7-day no-questions return" },
+    { "label": "Genuine Warranty", "detail": "Brand-backed, always" }
+  ]
+}

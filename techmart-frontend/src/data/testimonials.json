@@ -1,0 +1,34 @@
+[
+  {
+    "id": "t1",
+    "name": "Ananya Rao",
+    "role": "Video Editor",
+    "quote": "Ordered the XPS 15 on a Tuesday, was rendering a client's timeline by Thursday. Support actually knew what OLED calibration meant.",
+    "rating": 5,
+    "avatarSeed": "ananya"
+  },
+  {
+    "id": "t2",
+    "name": "Karthik Nair",
+    "role": "Software Engineer",
+    "quote": "The spec comparison made it easy to see the ThinkPad had the battery life I actually needed instead of the number on the sticker.",
+    "rating": 5,
+    "avatarSeed": "karthik"
+  },
+  {
+    "id": "t3",
+    "name": "Meera Iyer",
+    "role": "College Student",
+    "quote": "Got a Redmi Note 13 within budget and it still feels like I upgraded two price brackets up.",
+    "rating": 4,
+    "avatarSeed": "meera"
+  },
+  {
+    "id": "t4",
+    "name": "Farhan Sheikh",
+    "role": "Freelance Photographer",
+    "quote": "Switched to the iPhone 15 Pro for the camera stack alone. Delivery was two days faster than the estimate.",
+    "rating": 5,
+    "avatarSeed": "farhan"
+  }
+]

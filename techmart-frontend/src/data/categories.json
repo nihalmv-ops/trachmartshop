@@ -1,0 +1,16 @@
+[
+  {
+    "id": "cat-laptops",
+    "name": "Laptops",
+    "slug": "laptop",
+    "tagline": "Work, edit, render, repeat",
+    "image": "https://picsum.photos/seed/cat-laptops/600/500"
+  },
+  {
+    "id": "cat-mobiles",
+    "name": "Mobiles",
+    "slug": "mobile",
+    "tagline": "The screen that's always in your pocket",
+    "image": "https://picsum.photos/seed/cat-mobiles/600/500"
+  }
+]

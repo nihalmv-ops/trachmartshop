@@ -7,48 +7,81 @@ export default function Newsletter() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if (!email) return;
+
     setSubmitted(true);
     setEmail("");
+
+    setTimeout(() => {
+      setSubmitted(false);
+    }, 3000);
   }
 
   return (
-    <section className="container-shell py-16">
-      <div className="relative rounded-2xl border border-accent/30 bg-gradient-to-br from-surface to-surface-light p-8 sm:p-12 overflow-hidden">
-        <div
-          className="absolute -top-20 -left-20 w-72 h-72 bg-accent/20 rounded-full blur-[100px]"
-          aria-hidden="true"
-        />
-        <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-          <div>
-            <h3 className="font-display font-bold text-2xl text-ink">
-              Get the price-drop alert first
-            </h3>
-            <p className="text-ink-muted mt-2 max-w-md">
-              One email a week when a laptop or phone you'd actually want goes on sale.
-              No spam, unsubscribe anytime.
+    <section className="container-shell py-20">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#F8F7F3] via-[#FFFFFF] to-[#EEF4EE] border border-[#DDE5DA] shadow-xl p-8 md:p-12">
+
+        {/* Background Glow */}
+
+        <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#C9D9C4] blur-[110px] opacity-40" />
+
+        <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-[#E4EFE2] blur-[120px] opacity-70" />
+
+        <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
+
+          {/* Left */}
+
+          <div className="max-w-lg">
+
+            <p className="text-[#5E7D5A] font-semibold uppercase tracking-widest text-sm">
+              Newsletter
             </p>
+
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#243224]">
+              Never Miss a Deal
+            </h2>
+
+            <p className="mt-4 text-[#667266] leading-7">
+              Subscribe to receive exclusive offers, price-drop alerts,
+              and the latest laptops & smartphones directly in your inbox.
+            </p>
+
           </div>
-          <form onSubmit={handleSubmit} className="flex w-full lg:w-auto gap-2">
+
+          {/* Right */}
+
+          <form
+            onSubmit={handleSubmit}
+            className="w-full lg:w-auto flex flex-col sm:flex-row gap-3"
+          >
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              className="flex-1 lg:w-72 bg-base border border-border rounded-lg px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:border-accent outline-none"
+              placeholder="Enter your email"
+              className="w-full sm:w-80 rounded-xl border border-[#D5DED2] bg-white px-5 py-3 outline-none text-[#243224] placeholder:text-[#95A095] focus:border-[#5E7D5A] transition"
             />
-            <button type="submit" className="btn-primary shrink-0">
-              <Send size={16} />
-              <span className="hidden sm:inline">Subscribe</span>
+
+            <button
+              type="submit"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#5E7D5A] px-6 py-3 font-semibold text-white shadow-lg hover:bg-[#4F6B4C] transition-all duration-300"
+            >
+              <Send size={18} />
+              Subscribe
             </button>
+
           </form>
+
         </div>
+
         {submitted && (
-          <p className="relative text-sm text-success mt-3 font-mono">
-            ✓ You're on the list.
-          </p>
+          <div className="relative mt-6 rounded-xl bg-[#EDF5EC] border border-[#D4E3D1] px-4 py-3 text-[#4F6B4C] font-medium">
+            ✅ Thank you for subscribing! We'll notify you about our latest deals.
+          </div>
         )}
+
       </div>
     </section>
   );

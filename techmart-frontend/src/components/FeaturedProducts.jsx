@@ -4,28 +4,45 @@ import products from "../data/products.json";
 import ProductCard from "./ProductCard";
 import { SectionHeading } from "./CategoryShowcase";
 
-export default function FeaturedProducts({ tag = "bestseller", title = "Bestsellers this week", eyebrow = "Popular" }) {
-  const featured = products.filter((p) => p.tags?.includes(tag)).slice(0, 4);
+export default function FeaturedProducts({
+  tag = "bestseller",
+  title = "Best Sellers",
+  eyebrow = "Featured Products",
+}) {
+  const featured = products
+    .filter((p) => p.tags?.includes(tag))
+    .slice(0, 4);
 
   return (
-    <section className="container-shell py-16">
+    <section className="container-shell py-20">
+
       <SectionHeading
         eyebrow={eyebrow}
         title={title}
         action={
           <Link
             to="/shop/laptop"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-cyan transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-[#D6DFD4] bg-white px-5 py-2.5 font-medium text-[#5E7D5A] shadow-sm transition-all duration-300 hover:bg-[#5E7D5A] hover:text-white"
           >
-            View all <ArrowRight size={16} />
+            View All
+            <ArrowRight size={18} />
           </Link>
         }
       />
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-8">
+
+      <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+
         {featured.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <div
+            key={product.id}
+            className="transition-transform duration-300 hover:-translate-y-2"
+          >
+            <ProductCard product={product} />
+          </div>
         ))}
+
       </div>
+
     </section>
   );
 }

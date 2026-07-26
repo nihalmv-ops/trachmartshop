@@ -4,13 +4,13 @@
     "name": "Laptops",
     "slug": "laptop",
     "tagline": "Work, edit, render, repeat",
-    "image": "https://i.pinimg.com/736x/38/65/94/386594135756b1c8572b20991e9dd963.jpg"
+    "image": "https://i.pinimg.com/1200x/95/50/aa/9550aa8c4a57daac5310861064e2c830.jpg"
   },
   {
     "id": "cat-mobiles",
     "name": "Mobiles",
     "slug": "mobile",
     "tagline": "The screen that's always in your pocket",
-    "image": "https://picsum.photos/seed/cat-mobiles/600/500"
+    "image": "https://i.pinimg.com/1200x/02/2d/73/022d731552f2518ecd44861cef18d598.jpg"
   }
 ]

@@ -2,23 +2,39 @@ import brands from "../data/brands.json";
 
 export default function BrandStrip() {
   return (
-    <section className="border-y border-border bg-surface/40 py-8 overflow-hidden">
-      <div className="flex gap-12 animate-[scroll_28s_linear_infinite] w-max">
-        {[...brands, ...brands].map((brand, idx) => (
-          <span
-            key={idx}
-            className="font-display font-semibold text-lg text-ink-faint tracking-wide shrink-0"
-          >
-            {brand}
-          </span>
-        ))}
+    <section className="bg-[#F8F7F3] border-y border-[#E2E8E0] py-8 overflow-hidden">
+
+      <div className="relative">
+
+        <div className="flex w-max gap-16 animate-[scroll_30s_linear_infinite]">
+
+          {[...brands, ...brands].map((brand, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center shrink-0"
+            >
+              <span className="text-xl font-semibold tracking-wide text-[#6B776B] hover:text-[#5E7D5A] transition-colors duration-300 cursor-pointer">
+                {brand}
+              </span>
+            </div>
+          ))}
+
+        </div>
+
       </div>
+
       <style>{`
         @keyframes scroll {
-          from { transform: translateX(0); }
-          to { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(-50%);
+          }
         }
       `}</style>
+
     </section>
   );
 }

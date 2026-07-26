@@ -1,70 +1,163 @@
 import { Link } from "react-router-dom";
-import { Cpu, Mail, Phone, MapPin } from "lucide-react";
+import {
+  Cpu,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+
 import siteConfig from "../data/siteConfig.json";
-import { InstagramIcon, TwitterIcon, FacebookIcon, YoutubeIcon } from "./icons/SocialIcons";
+
+import {
+  InstagramIcon,
+  TwitterIcon,
+  FacebookIcon,
+  YoutubeIcon,
+} from "./icons/SocialIcons";
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface/40 mt-24">
-      <div className="container-shell py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
-        <div className="col-span-2">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="bg-accent/10 border border-accent/30 text-accent rounded-lg p-1.5">
-              <Cpu size={18} />
-            </span>
-            <span className="font-display font-bold text-lg">{siteConfig.siteName}</span>
-          </div>
-          <p className="text-sm text-ink-muted max-w-xs mb-4">{siteConfig.tagline}</p>
-          <div className="flex flex-col gap-2 text-sm text-ink-muted">
-            <a href={`tel:${siteConfig.contact.phone}`} className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Phone size={14} /> {siteConfig.contact.phone}
-            </a>
-            <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-2 hover:text-accent transition-colors">
-              <Mail size={14} /> {siteConfig.contact.email}
-            </a>
-            <p className="flex items-start gap-2">
-              <MapPin size={14} className="mt-0.5 shrink-0" /> {siteConfig.contact.address}
-            </p>
-          </div>
-        </div>
+    <footer className="mt-24 bg-[#F8F7F3] border-t border-[#E4E8E2]">
 
-        <FooterCol title="Shop" links={siteConfig.footerLinks.shop} />
-        <FooterCol title="Company" links={siteConfig.footerLinks.company} />
-        <FooterCol title="Support" links={siteConfig.footerLinks.support} />
-      </div>
+      <div className="container-shell py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
 
-      <div className="border-t border-border">
-        <div className="container-shell py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-ink-faint font-mono">
-            © {year} {siteConfig.siteName}. All rights reserved.
-          </p>
+        {/* Logo */}
+
+        <div className="lg:col-span-2">
+
           <div className="flex items-center gap-3">
-            <SocialIcon href={siteConfig.social.instagram} Icon={InstagramIcon} label="Instagram" />
-            <SocialIcon href={siteConfig.social.twitter} Icon={TwitterIcon} label="Twitter" />
-            <SocialIcon href={siteConfig.social.facebook} Icon={FacebookIcon} label="Facebook" />
-            <SocialIcon href={siteConfig.social.youtube} Icon={YoutubeIcon} label="YouTube" />
+
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EDF5EC] border border-[#D5E0D2]">
+              <Cpu className="text-[#5E7D5A]" size={22} />
+            </div>
+
+            <div>
+              <h2 className="font-display text-2xl font-bold text-[#243224]">
+                {siteConfig.siteName}
+              </h2>
+
+              <p className="text-sm text-[#7A847A]">
+                {siteConfig.tagline}
+              </p>
+            </div>
+
           </div>
+
+          <div className="mt-6 space-y-3 text-[#667266]">
+
+            <a
+              href={`tel:${siteConfig.contact.phone}`}
+              className="flex items-center gap-3 hover:text-[#5E7D5A] transition"
+            >
+              <Phone size={18} />
+              {siteConfig.contact.phone}
+            </a>
+
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              className="flex items-center gap-3 hover:text-[#5E7D5A] transition"
+            >
+              <Mail size={18} />
+              {siteConfig.contact.email}
+            </a>
+
+            <div className="flex items-start gap-3">
+              <MapPin size={18} className="mt-1" />
+              <span>{siteConfig.contact.address}</span>
+            </div>
+
+          </div>
+
         </div>
+
+        <FooterColumn
+          title="Shop"
+          links={siteConfig.footerLinks.shop}
+        />
+
+        <FooterColumn
+          title="Company"
+          links={siteConfig.footerLinks.company}
+        />
+
+        <FooterColumn
+          title="Support"
+          links={siteConfig.footerLinks.support}
+        />
+
       </div>
+
+      {/* Bottom */}
+
+      <div className="border-t border-[#E4E8E2]">
+
+        <div className="container-shell py-6 flex flex-col md:flex-row justify-between items-center gap-5">
+
+          <p className="text-sm text-[#7A847A]">
+            © {year} {siteConfig.siteName}. All Rights Reserved.
+          </p>
+
+          <div className="flex items-center gap-3">
+
+            <SocialIcon
+              href={siteConfig.social.instagram}
+              Icon={InstagramIcon}
+              label="Instagram"
+            />
+
+            <SocialIcon
+              href={siteConfig.social.twitter}
+              Icon={TwitterIcon}
+              label="Twitter"
+            />
+
+            <SocialIcon
+              href={siteConfig.social.facebook}
+              Icon={FacebookIcon}
+              label="Facebook"
+            />
+
+            <SocialIcon
+              href={siteConfig.social.youtube}
+              Icon={YoutubeIcon}
+              label="YouTube"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
     </footer>
   );
 }
 
-function FooterCol({ title, links }) {
+function FooterColumn({ title, links }) {
   return (
     <div>
-      <h4 className="font-display font-semibold text-sm mb-3 text-ink">{title}</h4>
-      <ul className="flex flex-col gap-2">
+
+      <h3 className="mb-5 text-lg font-semibold text-[#243224]">
+        {title}
+      </h3>
+
+      <ul className="space-y-3">
+
         {links.map((link) => (
           <li key={link.label}>
-            <Link to={link.path} className="text-sm text-ink-muted hover:text-accent transition-colors">
+            <Link
+              to={link.path}
+              className="text-[#667266] hover:text-[#5E7D5A] transition-colors duration-300"
+            >
               {link.label}
             </Link>
           </li>
         ))}
+
       </ul>
+
     </div>
   );
 }
@@ -76,9 +169,9 @@ function SocialIcon({ href, Icon, label }) {
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="p-2 rounded-lg border border-border text-ink-muted hover:text-accent hover:border-accent/50 transition-colors"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EDF5EC] text-[#5E7D5A] border border-[#D5E0D2] hover:bg-[#5E7D5A] hover:text-white transition-all duration-300"
     >
-      <Icon size={16} />
+      <Icon size={18} />
     </a>
   );
 }

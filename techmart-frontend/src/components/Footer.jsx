@@ -19,37 +19,39 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-24 bg-[#F8F7F3] border-t border-[#E4E8E2]">
+    <footer className="mt-24 bg-base border-t border-border">
+
+      {/* Green Glow */}
+      <div className="absolute left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-40"></div>
 
       <div className="container-shell py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
 
         {/* Logo */}
-
         <div className="lg:col-span-2">
 
           <div className="flex items-center gap-3">
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#EDF5EC] border border-[#D5E0D2]">
-              <Cpu className="text-[#5E7D5A]" size={22} />
+            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-surface border border-border shadow-card">
+              <Cpu className="text-accent" size={22} />
             </div>
 
             <div>
-              <h2 className="font-display text-2xl font-bold text-[#243224]">
+              <h2 className="font-display text-2xl font-bold text-ink">
                 {siteConfig.siteName}
               </h2>
 
-              <p className="text-sm text-[#7A847A]">
+              <p className="text-sm text-ink-muted">
                 {siteConfig.tagline}
               </p>
             </div>
 
           </div>
 
-          <div className="mt-6 space-y-3 text-[#667266]">
+          <div className="mt-6 space-y-3 text-ink-muted">
 
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              className="flex items-center gap-3 hover:text-[#5E7D5A] transition"
+              className="flex items-center gap-3 hover:text-accent transition-colors"
             >
               <Phone size={18} />
               {siteConfig.contact.phone}
@@ -57,14 +59,14 @@ export default function Footer() {
 
             <a
               href={`mailto:${siteConfig.contact.email}`}
-              className="flex items-center gap-3 hover:text-[#5E7D5A] transition"
+              className="flex items-center gap-3 hover:text-accent transition-colors"
             >
               <Mail size={18} />
               {siteConfig.contact.email}
             </a>
 
             <div className="flex items-start gap-3">
-              <MapPin size={18} className="mt-1" />
+              <MapPin size={18} className="mt-1 text-accent" />
               <span>{siteConfig.contact.address}</span>
             </div>
 
@@ -91,11 +93,11 @@ export default function Footer() {
 
       {/* Bottom */}
 
-      <div className="border-t border-[#E4E8E2]">
+      <div className="border-t border-border">
 
         <div className="container-shell py-6 flex flex-col md:flex-row justify-between items-center gap-5">
 
-          <p className="text-sm text-[#7A847A]">
+          <p className="text-sm text-ink-faint">
             © {year} {siteConfig.siteName}. All Rights Reserved.
           </p>
 
@@ -139,7 +141,7 @@ function FooterColumn({ title, links }) {
   return (
     <div>
 
-      <h3 className="mb-5 text-lg font-semibold text-[#243224]">
+      <h3 className="mb-5 text-lg font-semibold text-ink">
         {title}
       </h3>
 
@@ -149,7 +151,7 @@ function FooterColumn({ title, links }) {
           <li key={link.label}>
             <Link
               to={link.path}
-              className="text-[#667266] hover:text-[#5E7D5A] transition-colors duration-300"
+              className="text-ink-muted hover:text-accent transition-colors duration-300"
             >
               {link.label}
             </Link>
@@ -169,7 +171,7 @@ function SocialIcon({ href, Icon, label }) {
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full bg-[#EDF5EC] text-[#5E7D5A] border border-[#D5E0D2] hover:bg-[#5E7D5A] hover:text-white transition-all duration-300"
+      className="flex h-10 w-10 items-center justify-center rounded-full bg-surface border border-border text-accent hover:bg-accent hover:text-white transition-all duration-300 shadow-card"
     >
       <Icon size={18} />
     </a>

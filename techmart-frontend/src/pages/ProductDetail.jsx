@@ -1,6 +1,16 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { ShoppingCart, Minus, Plus, ChevronLeft, ShieldCheck, Truck, RotateCcw } from "lucide-react";
+import {
+  ShoppingCart,
+  Minus,
+  Plus,
+  ChevronLeft,
+  ShieldCheck,
+  Truck,
+  RotateCcw,
+  Volume2,
+  VolumeX,
+} from "lucide-react";
 import products from "../data/products.json";
 import RatingStars from "../components/RatingStars";
 import SpecStrip from "../components/SpecStrip";
@@ -15,6 +25,31 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
 
+  const [playVideo, setPlayVideo] = useState(false);
+const videoRef = useRef(null);
+
+const [muted, setMuted] = useState(true);
+
+useEffect(() => {
+  if (!videoRef.current) return;
+
+  const video = videoRef.current;
+
+  video.muted = muted;
+
+  if (playVideo) {
+    video.currentTime = 0;
+
+    const promise = video.play();
+
+    if (promise !== undefined) {
+      promise.catch(() => {});
+    }
+  } else {
+    video.pause();
+    video.currentTime = 0;
+  }
+}, [playVideo, muted]);
   const product = products.find((p) => p.id === id);
 
   if (!product) {
@@ -37,6 +72,18 @@ export default function ProductDetail() {
     setTimeout(() => setAdded(false), 1800);
   }
 
+  function toggleMute(e) {
+  e.stopPropagation();
+
+  const video = videoRef.current;
+
+  if (!video) return;
+
+  video.muted = !video.muted;
+
+  setMuted(video.muted);
+}
+
   return (
     <div className="container-shell py-10">
       <button
@@ -47,9 +94,58 @@ export default function ProductDetail() {
       </button>
 
       <div className="grid md:grid-cols-2 gap-10">
-        <div className="rounded-2xl overflow-hidden border border-border bg-surface aspect-square">
-          <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
-        </div>
+       <div
+  className="rounded-2xl overflow-hidden border border-border bg-surface aspect-square relative cursor-pointer"
+  onClick={() => setPlayVideo(true)}
+>
+  <img
+    src={product.image}
+    alt={product.name}
+    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+      playVideo
+        ? "opacity-0 scale-105"
+        : "opacity-100"
+    }`}
+  />
+
+  <video
+    ref={videoRef}
+    src={product.video}
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    controls={false}
+    disablePictureInPicture
+    controlsList="nodownload noplaybackrate noremoteplayback"
+    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+      playVideo
+        ? "opacity-100"
+        : "opacity-0 pointer-events-none"
+    }`}
+  />
+  {playVideo && (
+  <button
+    onClick={toggleMute}
+    className="absolute bottom-4 right-4
+               w-11 h-11
+               rounded-full
+               bg-black/40
+               backdrop-blur-xl
+               border border-white/20
+               flex items-center justify-center
+               transition-all duration-300
+               hover:scale-110
+               z-20"
+  >
+    {muted ? (
+      <VolumeX size={18} className="text-white" />
+    ) : (
+      <Volume2 size={18} className="text-white" />
+    )}
+  </button>
+)}
+</div>
 
         <div>
           <p className="text-xs font-mono uppercase tracking-widest text-accent mb-2">

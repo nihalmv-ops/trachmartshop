@@ -2,7 +2,7 @@ import brands from "../data/brands.json";
 
 export default function BrandStrip() {
   return (
-    <section className="bg-[#F8F7F3] border-y border-[#E2E8E0] py-8 overflow-hidden">
+    <section className=" border-y border-[#E2E8E0] py-8 overflow-hidden">
 
       <div className="relative">
 
@@ -13,7 +13,7 @@ export default function BrandStrip() {
               key={index}
               className="flex items-center justify-center shrink-0"
             >
-              <span className="text-xl font-semibold tracking-wide text-[#6B776B] hover:text-[#5E7D5A] transition-colors duration-300 cursor-pointer">
+              <span className="text-xl font-semibold tracking-wide hover: transition-colors duration-300 cursor-pointer">
                 {brand}
               </span>
             </div>

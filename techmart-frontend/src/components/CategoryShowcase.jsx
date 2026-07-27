@@ -17,7 +17,7 @@ export default function CategoryShowcase() {
           <Link
             key={cat.id}
             to={`/shop/${cat.slug}`}
-            className="group relative overflow-hidden rounded-3xl border border-[#DDE5DA] bg-white shadow-lg hover:shadow-2xl transition-all duration-500 h-72"
+            className="group relative overflow-hidden rounded-3xl border  shadow-lg hover:shadow-2xl transition-all duration-500 h-72"
           >
 
             <img

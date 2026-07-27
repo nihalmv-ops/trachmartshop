@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
+import { useState, useRef } from "react";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import { formatINR } from "../utils/format";
 
 export default function Cart() {
   const { items, removeItem, updateQty, subtotal, count } = useCart();
+  const [activeVideo, setActiveVideo] = useState(null);
+const videoRefs = useRef({});
 
   if (items.length === 0) {
     return (
@@ -37,13 +40,58 @@ export default function Cart() {
               key={item.id}
               className="flex gap-4 bg-surface border border-border rounded-xl p-4"
             >
-              <Link to={`/product/${item.id}`} className="shrink-0">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg object-cover"
-                />
-              </Link>
+             <Link
+  to={activeVideo === item.id ? "#" : `/product/${item.id}`}
+  className="shrink-0"
+>
+  <div
+    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-lg overflow-hidden cursor-pointer"
+    onClick={(e) => {
+      e.preventDefault();
+
+      Object.values(videoRefs.current).forEach((video) => {
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+
+      setActiveVideo(item.id);
+
+      setTimeout(() => {
+        const video = videoRefs.current[item.id];
+
+        if (video) {
+          video.play().catch(() => {});
+        }
+      }, 100);
+    }}
+  >
+    <img
+      src={item.image}
+      alt={item.name}
+      className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+        activeVideo === item.id
+          ? "opacity-0 scale-105"
+          : "opacity-100"
+      }`}
+    />
+
+    <video
+      ref={(el) => (videoRefs.current[item.id] = el)}
+      src={item.video}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+        activeVideo === item.id
+          ? "opacity-100"
+          : "opacity-0 pointer-events-none"
+      }`}
+    />
+  </div>
+</Link>
               <div className="flex-1 min-w-0 flex flex-col justify-between">
                 <div>
                   <p className="text-xs text-ink-faint font-mono uppercase">{item.brand}</p>

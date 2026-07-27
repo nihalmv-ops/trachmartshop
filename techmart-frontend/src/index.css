@@ -2,77 +2,187 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================
+   GLOBAL
+========================================== */
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-base text-ink font-body antialiased;
+  @apply text-white font-body antialiased;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(35, 140, 90, .18),
+      transparent 35%),
+
+    radial-gradient(circle at bottom right,
+      rgba(0, 180, 120, .12),
+      transparent 40%),
+
+    radial-gradient(circle at center,
+      rgba(255,255,255,.02),
+      transparent 60%),
+
+    linear-gradient(
+      135deg,
+      #040404 0%,
+      #090909 20%,
+      #101713 40%,
+      #18251D 60%,
+      #101713 80%,
+      #040404 100%
+    );
+
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-/* Text selection */
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
 ::selection {
-  background: #7A9A74;
+  background: #2CCB7F;
   color: #ffffff;
 }
 
-/* Visible keyboard focus */
+/* ==========================================
+   FOCUS
+========================================== */
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #5E7D5A;
+  outline: 2px solid #2CCB7F;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
-/* Reduce motion */
+/* ==========================================
+   REDUCE MOTION
+========================================== */
+
 @media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.001ms !important;
+    animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
+    transition-duration: .01ms !important;
     scroll-behavior: auto !important;
   }
 }
 
-/* Scrollbar */
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #EEF3EC;
+  background: #0b0b0b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #5E7D5A;
-  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    #2CCB7F,
+    #16794C
+  );
+  border-radius: 30px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4F6B4C;
+  background: linear-gradient(
+    180deg,
+    #35E58F,
+    #20945D
+  );
 }
 
+/* ==========================================
+   LAYOUT
+========================================== */
 
-
-/* Layout */
 .container-shell {
   @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-/* Small specification chip */
+/* ==========================================
+   GLASS SURFACE
+========================================== */
+
+.bg-surface {
+  background: rgba(20,20,20,.78);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.bg-surface-light {
+  background: rgba(30,30,30,.72);
+}
+
+.border-border {
+  border-color: rgba(255,255,255,.08);
+}
+
+/* ==========================================
+   SPEC CHIP
+========================================== */
+
 .spec-chip {
-  @apply font-mono text-[11px] sm:text-xs tracking-tight text-ink-muted bg-surface-light border border-border rounded px-2 py-1 whitespace-nowrap;
+  @apply font-mono text-[11px] sm:text-xs tracking-tight rounded px-2 py-1 whitespace-nowrap;
+
+  background: rgba(44,203,127,.08);
+  color: #D6F5E6;
+  border: 1px solid rgba(44,203,127,.25);
 }
 
-/* Primary button */
+/* ==========================================
+   BUTTONS
+========================================== */
+
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 bg-accent text-white font-semibold rounded-lg px-5 py-2.5 hover:bg-accent-cyan transition-all duration-300 shadow-card;
+  @apply inline-flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-5 py-2.5 transition-all duration-300;
+
+  background: linear-gradient(
+    135deg,
+    #16794C,
+    #2CCB7F
+  );
+
+  box-shadow:
+    0 10px 25px rgba(44,203,127,.25);
 }
 
-/* Outline button */
+.btn-primary:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    135deg,
+    #20A665,
+    #39E996
+  );
+
+  box-shadow:
+    0 16px 35px rgba(44,203,127,.40);
+}
+
 .btn-outline {
-  @apply inline-flex items-center justify-center gap-2 border border-border text-ink font-medium rounded-lg px-5 py-2.5 hover:border-accent hover:text-accent transition-all duration-300;
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-medium transition-all duration-300;
+
+  border: 1px solid rgba(44,203,127,.35);
+  color: #E8FFF2;
+  background: rgba(255,255,255,.03);
+}
+
+.btn-outline:hover {
+  background: rgba(44,203,127,.12);
+  border-color: #2CCB7F;
+  color: #2CCB7F;
 }

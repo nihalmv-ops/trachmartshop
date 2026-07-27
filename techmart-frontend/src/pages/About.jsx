@@ -30,7 +30,7 @@ export default function About() {
         </div>
         <div className="rounded-2xl overflow-hidden border border-border aspect-video">
           <img
-            src="https://picsum.photos/seed/about-store/800/500"
+            src="https://i.pinimg.com/736x/92/05/e8/9205e834361d147e5131acf8282da03f.jpg"
             alt="Our store"
             className="w-full h-full object-cover"
           />

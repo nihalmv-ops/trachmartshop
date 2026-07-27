@@ -20,13 +20,29 @@ export default function Newsletter() {
 
   return (
     <section className="container-shell py-20">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#F8F7F3] via-[#FFFFFF] to-[#EEF4EE] border border-[#DDE5DA] shadow-xl p-8 md:p-12">
+      <div
+        className="
+        relative overflow-hidden rounded-3xl
+        border border-[#1F3A2D]
+        bg-gradient-to-br
+        from-[#050505]
+        via-[#0D1713]
+        to-[#10221A]
+        shadow-[0_20px_60px_rgba(0,0,0,.6)]
+        p-8 md:p-12"
+      >
 
-        {/* Background Glow */}
+        {/* Top Glow */}
 
-        <div className="absolute -top-24 -left-24 w-72 h-72 rounded-full bg-[#C9D9C4] blur-[110px] opacity-40" />
+        <div className="absolute -top-28 -left-24 w-80 h-80 rounded-full bg-[#1D5C42] blur-[120px] opacity-30" />
 
-        <div className="absolute -bottom-20 -right-20 w-72 h-72 rounded-full bg-[#E4EFE2] blur-[120px] opacity-70" />
+        {/* Bottom Glow */}
+
+        <div className="absolute -bottom-28 -right-20 w-80 h-80 rounded-full bg-[#0D8C66] blur-[140px] opacity-20" />
+
+        {/* Center Glow */}
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(45,140,95,.12),transparent_65%)]"></div>
 
         <div className="relative flex flex-col lg:flex-row items-center justify-between gap-8">
 
@@ -34,17 +50,18 @@ export default function Newsletter() {
 
           <div className="max-w-lg">
 
-            <p className="text-[#5E7D5A] font-semibold uppercase tracking-widest text-sm">
+            <p className="text-[#63D69B] font-semibold uppercase tracking-[4px] text-sm">
               Newsletter
             </p>
 
-            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-[#243224]">
+            <h2 className="mt-3 text-3xl md:text-4xl font-bold text-white">
               Never Miss a Deal
             </h2>
 
-            <p className="mt-4 text-[#667266] leading-7">
+            <p className="mt-4 text-gray-400 leading-7">
               Subscribe to receive exclusive offers, price-drop alerts,
-              and the latest laptops & smartphones directly in your inbox.
+              premium laptops, flagship smartphones, and members-only
+              discounts directly in your inbox.
             </p>
 
           </div>
@@ -55,18 +72,46 @@ export default function Newsletter() {
             onSubmit={handleSubmit}
             className="w-full lg:w-auto flex flex-col sm:flex-row gap-3"
           >
+
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
-              className="w-full sm:w-80 rounded-xl border border-[#D5DED2] bg-white px-5 py-3 outline-none text-[#243224] placeholder:text-[#95A095] focus:border-[#5E7D5A] transition"
+              className="
+              w-full sm:w-80
+              rounded-xl
+              border border-[#2A5E45]
+              bg-[#111111]
+              text-white
+              placeholder:text-gray-500
+              px-5 py-3
+              outline-none
+              focus:border-[#63D69B]
+              focus:ring-2
+              focus:ring-[#2FA36B]/30
+              transition-all"
             />
 
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#5E7D5A] px-6 py-3 font-semibold text-white shadow-lg hover:bg-[#4F6B4C] transition-all duration-300"
+              className="
+              inline-flex
+              items-center
+              justify-center
+              gap-2
+              rounded-xl
+              bg-[#1F5D43]
+              px-6
+              py-3
+              font-semibold
+              text-white
+              shadow-lg
+              hover:bg-[#2E8A60]
+              hover:scale-105
+              transition-all
+              duration-300"
             >
               <Send size={18} />
               Subscribe
@@ -77,7 +122,18 @@ export default function Newsletter() {
         </div>
 
         {submitted && (
-          <div className="relative mt-6 rounded-xl bg-[#EDF5EC] border border-[#D4E3D1] px-4 py-3 text-[#4F6B4C] font-medium">
+          <div
+            className="
+            relative
+            mt-6
+            rounded-xl
+            border border-[#2A5E45]
+            bg-[#11251B]
+            px-4
+            py-3
+            text-[#63D69B]
+            font-medium"
+          >
             ✅ Thank you for subscribing! We'll notify you about our latest deals.
           </div>
         )}

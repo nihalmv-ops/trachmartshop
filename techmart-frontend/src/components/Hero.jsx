@@ -93,32 +93,34 @@ function Stat({ value, label }) {
 }
 function DeviceMockups() {
   return (
-    <div className="relative flex items-center justify-center w-full h-[700px]">
+    <div className="relative flex items-center justify-center w-full h-[800px]">
 
       {/* Background Glow */}
-      <div className="absolute w-96 h-96 rounded-full bg-[#DCE8D8] blur-[120px] opacity-60" />
+      <div className="absolute w-[420px] h-[420px] rounded-full bg-[#DCE8D8] blur-[120px] opacity-50"></div>
 
-      {/* Laptop Video */}
-     <video
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="w-[1200px]  rounded-3xl shadow-4xl animate-[float_6s_ease-in-out_infinite]"
->
-  <source src={laptopVideo} type="video/mp4" />
-</video>
+      {/* Laptop */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-[700px] rounded-3xl shadow-2xl object-cover animate-[float_6s_ease-in-out_infinite]"
+      >
+        <source src={laptopVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-      {/* Mobile Video */}
-     <video
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute w-[180px] right-0  bottom-1 rounded-[24px] shadow-2xl animate-[float_5s_ease-in-out_infinite]"
->
-  <source src={mobileVideo} type="video/mp4" />
-</video>
+      {/* Mobile */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute w-[200px] bottom-10 right-2 rounded-[28px] shadow-2xl object-cover animate-[float_5s_ease-in-out_infinite]"
+      >
+        <source src={mobileVideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
     </div>
   );

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { Laptop, Smartphone } from "lucide-react";
+import "./Hero.css";
+import laptopVideo from "../assets/laptop-demo.mp4";
+import mobileVideo from "../assets/mobile-demo.mp4";
 
 export default function Hero() {
   return (
@@ -88,50 +91,34 @@ function Stat({ value, label }) {
     </div>
   );
 }
-
 function DeviceMockups() {
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative flex items-center justify-center w-full h-[700px]">
 
-      {/* Laptop */}
+      {/* Background Glow */}
+      <div className="absolute w-96 h-96 rounded-full bg-[#DCE8D8] blur-[120px] opacity-60" />
 
-      <div className="relative mx-auto w-[360px]">
+      {/* Laptop Video */}
+     <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="w-[1200px]  rounded-3xl shadow-4xl animate-[float_6s_ease-in-out_infinite]"
+>
+  <source src={laptopVideo} type="video/mp4" />
+</video>
 
-        <div className="rounded-2xl border border-[#D9E3D6] bg-white p-3 shadow-2xl">
-
-          <div className="overflow-hidden rounded-xl aspect-[16/10]">
-
-            <img
-              src="https://i.pinimg.com/736x/2c/bb/27/2cbb279db19688c5d0146ae3143c7d78.jpg"
-              alt=""
-              className="w-full h-full object-cover"
-            />
-
-          </div>
-
-        </div>
-
-        <div className="h-4 rounded-b-xl bg-[#E8EEE7] border-x border-b border-[#D9E3D6]" />
-
-        <div className="mx-auto h-2 w-28 rounded-b-full bg-[#CDD9CB]" />
-
-      </div>
-
-      {/* Phone */}
-
-      <div className="absolute -bottom-8 -right-8 w-36 rounded-[32px] border-[6px] border-white bg-white shadow-2xl overflow-hidden">
-
-        <div className="aspect-[9/19]">
-
-          <img
-            src="https://i.pinimg.com/736x/bf/17/f5/bf17f52c5552de9b5703c5eb69d88f7e.jpg"
-            alt=""
-            className="w-full h-full object-cover"
-          />
-
-        </div>
-
-      </div>
+      {/* Mobile Video */}
+     <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute w-[180px] right-0  bottom-1 rounded-[24px] shadow-2xl animate-[float_5s_ease-in-out_infinite]"
+>
+  <source src={mobileVideo} type="video/mp4" />
+</video>
 
     </div>
   );

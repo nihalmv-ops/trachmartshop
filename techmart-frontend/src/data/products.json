@@ -11,7 +11,14 @@
     "stock": 12,
     "tags": ["bestseller"],
     "image": "https://i.pinimg.com/1200x/45/7b/bd/457bbd650f0e4e3c116a5fe0f46863ed.jpg",
-    "specs": { "processor": "Intel Core i7-13700H", "ram": "16GB", "storage": "512GB SSD", "display": "15.6\" OLED", "battery": "86Wh" },
+    "video": "/videos/dell-xps.mp4",
+    "specs": {
+      "processor": "Intel Core i7-13700H",
+      "ram": "16GB",
+      "storage": "512GB SSD",
+      "display": "15.6\" OLED",
+      "battery": "86Wh"
+    },
     "description": "A precision-milled aluminum chassis with a 4K OLED canvas built for editors who live in timelines and color panels."
   },
   {
@@ -26,7 +33,14 @@
     "stock": 20,
     "tags": ["new"],
     "image": "https://i.pinimg.com/736x/e3/0b/c4/e30bc43e031e1f335dabdf05c1973a4d.jpg",
-    "specs": { "processor": "Apple M3", "ram": "8GB", "storage": "256GB SSD", "display": "13.6\" Liquid Retina", "battery": "18hr" },
+    "video": "/videos/macbook-air.mp4",
+    "specs": {
+      "processor": "Apple M3",
+      "ram": "8GB",
+      "storage": "256GB SSD",
+      "display": "13.6\" Liquid Retina",
+      "battery": "18hr"
+    },
     "description": "Fanless, featherlight, and fast enough to forget it's fanless — the everyday laptop that never asks for a nap."
   },
   {
@@ -41,7 +55,14 @@
     "stock": 8,
     "tags": ["sale", "bestseller"],
     "image": "https://i.pinimg.com/736x/49/6b/21/496b21719515ce7ef379a2745424f677.jpg",
-    "specs": { "processor": "AMD Ryzen 9 8945HS", "ram": "16GB", "storage": "1TB SSD", "display": "14\" QHD 165Hz", "battery": "76Wh" },
+    "video": "/videos/rog-g14.mp4",
+    "specs": {
+      "processor": "AMD Ryzen 9 8945HS",
+      "ram": "16GB",
+      "storage": "1TB SSD",
+      "display": "14\" QHD 165Hz",
+      "battery": "76Wh"
+    },
     "description": "A 14-inch chassis that hides a desktop-class RTX GPU — small enough for a backpack, loud enough for a LAN party."
   },
   {
@@ -56,7 +77,14 @@
     "stock": 30,
     "tags": ["sale"],
     "image": "https://i.pinimg.com/736x/d5/22/59/d5225948b788c777815ab5b27f183ba6.jpg",
-    "specs": { "processor": "Intel Core i5-1235U", "ram": "8GB", "storage": "512GB SSD", "display": "15.6\" FHD", "battery": "41Wh" },
+    "video": "/videos/hp-pavilion.mp4",
+    "specs": {
+      "processor": "Intel Core i5-1235U",
+      "ram": "8GB",
+      "storage": "512GB SSD",
+      "display": "15.6\" FHD",
+      "battery": "41Wh"
+    },
     "description": "The dependable daily driver — spreadsheets, browser tabs, and video calls without a second thought."
   },
   {
@@ -71,7 +99,14 @@
     "stock": 10,
     "tags": ["bestseller"],
     "image": "https://i.pinimg.com/736x/02/30/d6/0230d69b9021dc8d81e44c7bd1c143c1.jpg",
-    "specs": { "processor": "Intel Core i7-1355U", "ram": "16GB", "storage": "1TB SSD", "display": "14\" 2.8K", "battery": "57Wh" },
+    "video": "/videos/thinkpad-x1.mp4",
+    "specs": {
+      "processor": "Intel Core i7-1355U",
+      "ram": "16GB",
+      "storage": "1TB SSD",
+      "display": "14\" 2.8K",
+      "battery": "57Wh"
+    },
     "description": "Carbon-fiber armor, a keyboard that types like it means it, and MIL-SPEC durability for the road warrior."
   },
   {
@@ -86,7 +121,14 @@
     "stock": 45,
     "tags": ["sale", "budget"],
     "image": "https://i.pinimg.com/736x/42/aa/e0/42aae041e783ab81d4fa0661b74ac72c.jpg",
-    "specs": { "processor": "Intel Core i3-1215U", "ram": "8GB", "storage": "256GB SSD", "display": "15.6\" FHD", "battery": "50Wh" },
+    "video": "/videos/acer-aspire.mp4",
+    "specs": {
+      "processor": "Intel Core i3-1215U",
+      "ram": "8GB",
+      "storage": "256GB SSD",
+      "display": "15.6\" FHD",
+      "battery": "50Wh"
+    },
     "description": "Light on the wallet, light in the bag — built for students who need it to just work."
   },
   {
@@ -101,7 +143,14 @@
     "stock": 25,
     "tags": ["new", "bestseller"],
     "image": "https://i.pinimg.com/1200x/3b/54/38/3b5438d4f7c20e510f4d213a7d2a505d.jpg",
-    "specs": { "processor": "A17 Pro", "ram": "8GB", "storage": "256GB", "display": "6.1\" Super Retina XDR", "battery": "3274mAh" },
+    "video": "/videos/iphone15.mp4",
+    "specs": {
+      "processor": "A17 Pro",
+      "ram": "8GB",
+      "storage": "256GB",
+      "display": "6.1\" Super Retina XDR",
+      "battery": "3274mAh"
+    },
     "description": "Titanium rails, a periscope zoom, and a chip that treats real-time ray tracing like a warm-up exercise."
   },
   {
@@ -116,67 +165,14 @@
     "stock": 18,
     "tags": ["sale", "bestseller"],
     "image": "https://i.pinimg.com/736x/00/48/a7/0048a7ec27539ccd6437b7b0087f4108.jpg",
-    "specs": { "processor": "Snapdragon 8 Gen 3", "ram": "12GB", "storage": "256GB", "display": "6.8\" QHD+ AMOLED", "battery": "5000mAh" },
+    "video": "/videos/s24-ultra.mp4",
+    "specs": {
+      "processor": "Snapdragon 8 Gen 3",
+      "ram": "12GB",
+      "storage": "256GB",
+      "display": "6.8\" QHD+ AMOLED",
+      "battery": "5000mAh"
+    },
     "description": "A built-in S Pen, a 200MP eye for detail, and an AMOLED canvas bright enough to fight the noon sun."
-  },
-  {
-    "id": "mob-003",
-    "name": "OnePlus Ace 3 Pro ",
-    "brand": "OnePlus",
-    "category": "mobile",
-    "price": 64999,
-    "oldPrice": 69999,
-    "rating": 4.5,
-    "reviews": 320,
-    "stock": 22,
-    "tags": ["sale"],
-    "image": "https://i.pinimg.com/1200x/2d/51/02/2d5102b690b581c102508ee20124e1f3.jpg",
-    "specs": { "processor": "Snapdragon 8 Gen 3", "ram": "12GB", "storage": "256GB", "display": "6.82\" LTPO AMOLED", "battery": "5400mAh" },
-    "description": "100W charging that outruns your coffee break, wrapped around a display tuned for HDR bingeing."
-  },
-  {
-    "id": "mob-004",
-    "name": "Redmi Note 15 Pro",
-    "brand": "Redmi",
-    "category": "mobile",
-    "price": 39999,
-    "oldPrice": 43999,
-    "rating": 4.3,
-    "reviews": 198,
-    "stock": 34,
-    "tags": ["sale", "new"],
-    "image": "https://i.pinimg.com/736x/86/9f/a7/869fa77bf73e1a15d39ab9594a5e7a54.jpg",
-    "specs": { "processor": "Snapdragon 8s Gen 3", "ram": "12GB", "storage": "256GB", "display": "6.55\" AMOLED", "battery": "4700mAh" },
-    "description": "A camera-first flagship built for portraits, tuned in collaboration with a studio famous for color science."
-  },
-  {
-    "id": "mob-005",
-    "name": "Google Pixel 8",
-    "brand": "Google",
-    "category": "mobile",
-    "price": 75999,
-    "oldPrice": null,
-    "rating": 4.6,
-    "reviews": 276,
-    "stock": 15,
-    "tags": ["bestseller"],
-    "image": "https://i.pinimg.com/736x/98/bb/fc/98bbfc4b322cc07d58c33878e60e5415.jpg",
-    "specs": { "processor": "Google Tensor G3", "ram": "8GB", "storage": "128GB", "display": "6.2\" OLED", "battery": "4575mAh" },
-    "description": "Computational photography that edits reality after the fact, running on the cleanest Android around."
-  },
-  {
-    "id": "mob-006",
-    "name": "Redmi Note 13 Pro",
-    "brand": "Redmi",
-    "category": "mobile",
-    "price": 17999,
-    "oldPrice": 20999,
-    "rating": 4.1,
-    "reviews": 502,
-    "stock": 60,
-    "tags": ["sale", "budget"],
-    "image": "https://i.pinimg.com/736x/be/e4/e6/bee4e6bf38ceedab906d7c403c313ef9.jpg",
-    "specs": { "processor": "Snapdragon 685", "ram": "6GB", "storage": "128GB", "display": "6.67\" AMOLED", "battery": "5000mAh" },
-    "description": "Proof that an AMOLED display and all-day battery don't need a flagship price tag."
   }
 ]

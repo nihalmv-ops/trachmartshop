@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import products from "../data/products.json";
 import ProductCard from "./ProductCard";
@@ -9,13 +10,15 @@ export default function FeaturedProducts({
   title = "Best Sellers",
   eyebrow = "Featured Products",
 }) {
+
+  const [activeVideo, setActiveVideo] = useState(null);
+
   const featured = products
     .filter((p) => p.tags?.includes(tag))
     .slice(0, 4);
 
   return (
     <section className="container-shell py-20">
-
       <SectionHeading
         eyebrow={eyebrow}
         title={title}
@@ -31,18 +34,19 @@ export default function FeaturedProducts({
       />
 
       <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
-
         {featured.map((product) => (
           <div
             key={product.id}
             className="transition-transform duration-300 hover:-translate-y-2"
           >
-            <ProductCard product={product} />
+            <ProductCard
+              product={product}
+              activeVideo={activeVideo}
+              setActiveVideo={setActiveVideo}
+            />
           </div>
         ))}
-
       </div>
-
     </section>
   );
 }

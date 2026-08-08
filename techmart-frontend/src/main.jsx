@@ -1,13 +1,31 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App.jsx";
+import { Toaster } from "react-hot-toast";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
+import App from "./App";
+import { CartProvider } from "./context/CartContext";
+import { WishlistProvider } from "./context/WishlistContext";
+import { AuthProvider } from "./context/AuthContext";
+
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AuthProvider>
+        <WishlistProvider>
+          <CartProvider>
+            <App />
+            <Toaster
+              position="top-right"
+              toastOptions={{
+                duration: 2500,
+              }}
+            />
+          </CartProvider>
+        </WishlistProvider>
+      </AuthProvider>
     </BrowserRouter>
-  </StrictMode>
+  </React.StrictMode>
 );

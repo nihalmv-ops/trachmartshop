@@ -8,6 +8,11 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import EditProfile from "./pages/EditProfile";
+import Wishlist from "./pages/Wishlist";
 
 function NotFound() {
   return (
@@ -32,6 +37,14 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/wishlist" element={<Wishlist />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/register" element={<Register />} />
+            
+            
+
+            <Route path="/login" element={<Login />} />
+            <Route path="/profile/edit"element={<EditProfile />}/>
           </Routes>
         </main>
         <Footer />
